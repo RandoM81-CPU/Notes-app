@@ -1,0 +1,45 @@
+table {
+  margin: 30px auto auto;
+  width: 916px;
+}
+table thead {
+  background-color: grey;
+  border-radius: 4px;
+  color: white;
+  height: 35px;
+}
+table thead tr {
+  display: flex;
+}
+table thead tr td {
+  width: 150px;
+  text-align: center;
+  padding-top: 5px;
+  margin: 0;
+}
+table tbody {
+  margin-top: 20px;
+}
+table tbody tr {
+  padding-top: 10px;
+  display: flex;
+}
+table tbody tr td {
+  background-color: lightblue;
+  width: 150px;
+  text-align: center;
+  padding-top: 5px;
+  margin: 0;
+  color: darkgray;
+}
+
+.note {
+  float: right;
+  margin: 10px 305px 40px;
+}
+
+.dsg {
+  color: DarkSlateGrey;
+}
+
+/*# sourceMappingURL=style.css.map */
