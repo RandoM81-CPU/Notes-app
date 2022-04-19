@@ -1,5 +1,6 @@
 table{
   margin: 30px auto auto;
+  display: block;
   width: 916px;
   thead{
     background-color: grey;
@@ -33,13 +34,21 @@ table{
     }
   }
 }
-.note{
+.btnAdd{
   float: right;
-  margin: 10px 305px 40px;
-}
-.categories {
-
+  margin: 10px 383px 40px;
 }
 .dsg{
   color: DarkSlateGrey;
+}
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
 }

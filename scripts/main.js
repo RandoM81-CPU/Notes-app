@@ -1,36 +1,39 @@
-let myNodelist = document.getElementsByTagName("td");
+import NotesView from "./NotesView.js"
 
-for (let i = 0; i < myNodelist.length; i++) {
-  let span = document.createElement("SPAN");
-  let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
+const app = document.getElementById("app");
+const view = new NotesView(app, {
+  onNoteAdd(){
 
+  },
+  createNoteElement(){
+    const tbody = document.querySelector("#notes-data");
 
-function newElement() {
-  let li = document.createElement("li");
-  let inputValue = document.getElementById("myInput").value;
-  let t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
+    tbody.innerHTML = `
+      <tr>
+      <td class="dsg"><input name="name" type='text'></td>
+      <td>${new Date().toISOString()}</td>
+      <td>
+        <select id='category'>
+          <option value='1'>Task</option>
+          <option value='2'>Random Thought</option>
+          <option value='3'>Idea</option>
+        </select>
+      </td>
+      <td><input name="content" type="text"></td>
+      <td><input name="dates" type="text"></td>
+      <td class="dsg">
+        <img width="20px" height="20px" src="resources\\pencil.svg" class="dsg" alt="Pencil">
+        <img width="20px" height="20px" src="resources\\archive.svg" class="dsg" alt="Archive">
+        <img width="20px" height="20px" src="resources\\trashcan.svg" class="dsg" alt="Pencil">
+      </td>
+      </tr>`;
 
-  let span = document.createElement("SPAN");
-  let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (let i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
+    return {
+      name: tbody.forms.name,
+      date: new Date().toISOString(),
+      category: tbody.forms.category,
+      content: tbody.forms.content,
+      dates: tbody.forms.dates
+    };
+  },
+});
